@@ -22,7 +22,8 @@ def golden_section(f, x_l, x_r, eps):
     return (x_r + x_l) / 2, f((x_r + x_l) / 2)
 
 
-# data input
-left, right, tolerance = [float(el) for el in input().split()]
-# answer output
-print(golden_section(func, left, right, tolerance))
+with open("tests/task2.txt", "r") as f:
+    # data input
+    left, right, tolerance = [float(el) for el in f.readline().split()]
+    # answer output
+    print(*golden_section(func, left, right, tolerance))

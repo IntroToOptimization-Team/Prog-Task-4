@@ -15,7 +15,8 @@ def gradient_ascent_method(gradient, f, x, alpha, n):
     return x, f(x)
 
 
-# data input
-x_0, learning_rate, iterations_number = [float(el) for el in input().split()]
-# answer output
-print(gradient_ascent_method(gradient_func, func, x_0, learning_rate, int(iterations_number)))
+with open("tests/task3.txt", "r") as f:
+    # data input
+    x_0, learning_rate, iterations_number = [float(el) for el in f.readline().split()]
+    # answer output
+    print(*gradient_ascent_method(gradient_func, func, x_0, learning_rate, int(iterations_number)))

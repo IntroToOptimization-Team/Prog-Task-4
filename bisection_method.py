@@ -19,7 +19,8 @@ def bisection_method(f, a, b, eps):
     return c
 
 
-# data input
-left, right, tolerance = [float(el) for el in input().split()]
-# answer output
-print(bisection_method(func, left, right, tolerance))
+with open("tests/task1.txt", "r") as f:
+    # data input
+    left, right, tolerance = [float(el) for el in f.readline().split()]
+    # answer output
+    print(bisection_method(func, left, right, tolerance))
