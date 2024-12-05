@@ -5,7 +5,7 @@ def func(x):
 
 def golden_section(f, x_l, x_r, eps):
     # repeat algorithm until interval is too small
-    while abs(x_r - x_l) > eps:
+    while abs(x_r - x_l) >= eps:
         x_1 = x_r - ((5 ** 0.5 - 1) / 2) * (x_r - x_l)
         x_2 = x_l + ((5 ** 0.5 - 1) / 2) * (x_r - x_l)
         f1 = f(x_1)
